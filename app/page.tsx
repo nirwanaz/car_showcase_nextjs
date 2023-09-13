@@ -62,7 +62,7 @@ export default function Home() {
         <div className="home__filters">
           <SearchBar setManufacturer={setManufacturer} setModel={setModel}/>
 
-          <div className="home__filters-container">
+          <div className="home__filter-container">
             <CustomFilter title="fuel" options={fuels} setFilter={setFuel}/>
             <CustomFilter title="year" options={yearsOfProduction} setFilter={setYear} />
           </div>
@@ -91,13 +91,12 @@ export default function Home() {
             <ShowMore
               pageNumber={limit / 10}
               isNext={limit > allCars.length}
-              setlimit={setLimit}
+              setLimit={setLimit}
             />
           </section>
         ): (
           <div className="home__error-container">
             <h2 className='text-black text-xl font-bold'>Ooops, no results</h2>
-            <p>{allCars?.message}</p>
           </div>
         )}
       </div>

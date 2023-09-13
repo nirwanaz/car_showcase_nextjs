@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { SearchManufacturer } from "./";
-import { useRouter } from "next/navigation";
+import { SearchbarProps } from "@/types";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
@@ -19,10 +19,9 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = ({ setManufacturer, setModel }) => {
+const SearchBar = ({ setManufacturer, setModel }: SearchbarProps) => {
   const [searchManufacturer, setSearchManufacturer] = useState("");
   const [searchModel, setSearchModel] = useState("");
-  const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +46,7 @@ const SearchBar = ({ setManufacturer, setModel }) => {
       </div>
       <div className="searchbar__item">
         <Image
-          src="/searchModel-icon.png"
+          src="/model-icon.png"
           width={25}
           height={25}
           className="absolute w-[20px] h-[20px] ml-4"

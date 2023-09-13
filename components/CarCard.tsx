@@ -36,7 +36,7 @@ const CarCard = ({ car }: CarCardProps) => {
             </span>
         </p>
 
-        <div className="realtive w-full h-40 my-3 object-contain">
+        <div className="relative w-full h-40 my-3 object-contain">
             <Image src={generateCarImageurl(car)} alt="car model" fill priority className="object-contain" />
         </div>
 
